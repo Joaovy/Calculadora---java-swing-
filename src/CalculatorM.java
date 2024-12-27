@@ -38,17 +38,18 @@ public class CalculatorM extends JFrame implements ActionListener {
         screen.setFont(new Font("Times New Roman", Font.BOLD, 18));
 
         setTitle("Calculator");
-        screen.setBackground(Color.BLACK);
-        panel.setBackground(Color.BLACK);
-        btnPanel.setBackground(Color.BLACK);
+        screen.setBackground(new Color(65, 105, 225));
+        panel.setBackground(new Color(65, 105, 225));
+        btnPanel.setBackground(new Color(65, 105, 225));
         screen.setForeground(Color.WHITE);
 
         for(int i = 0; i < btns.length; i++){
                 btns[i] = new JButton(symbols[i]);
 
                 btns[i].setOpaque(false);
+                btns[i].setContentAreaFilled(false);
                 btns[i].setBorderPainted(false);
-                btns[i].setBackground(Color.BLACK);
+                btns[i].setBackground(new Color(65, 105, 225));
                 btns[i].setForeground(Color.WHITE);
                 btns[i].addActionListener(this);
 
@@ -57,12 +58,12 @@ public class CalculatorM extends JFrame implements ActionListener {
             btns[i].addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseEntered(MouseEvent e) {
-                    btns[index].setFont(new Font("Arial", Font.BOLD, 20)); // Fonte maior ao passar o mouse
+                    btns[index].setFont(new Font("Arial", Font.BOLD, 25)); // Fonte maior ao passar o mouse
                 }
 
                 @Override
                 public void mouseExited(MouseEvent e) {
-                    btns[index].setFont(new Font("Arial", Font.PLAIN, 18)); // Fonte original ao sair
+                    btns[index].setFont(new Font("Arial", Font.PLAIN, 20)); // Fonte original ao sair
                 }
             });
                 btnPanel.add(btns[i]);
